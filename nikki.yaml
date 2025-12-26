@@ -5,7 +5,7 @@
 # 机场订阅
 proxy-providers:
   Airport1:
-    url: "https://hailitum.giountal.top/sub?target=clash&udp=true&filename=maoxiong&interval=86400&append_info&url=https://gbshct.spphhnhg.top/link/zHA0T1pxwek6KaUgQOgKp7wbyaJ9VVlz?clash=1&extend=1"
+    url: "https://hailitum.giountal.top/sub?OgKp7wbyaJ9VVlz?clash=1&extend=1"
     type: http
     interval: 86400
     health-check:
@@ -14,7 +14,7 @@ proxy-providers:
       interval: 300
     proxy: 直连
   Airport2:
-    url: "https://app.mitce.net/?sid=407835&token=srvbhwnv7835&token=srvbhwnv"
+    url: "https://app.token=srvbhwnv"
     type: http
     interval: 86400
     health-check:
