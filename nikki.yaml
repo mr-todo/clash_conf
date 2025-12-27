@@ -5,23 +5,25 @@
 # 机场订阅
 proxy-providers:
   Airport1:
-    url: "https://hailitum.giountal.top/sub?OgKp7wbyaJ9VVlz?clash=1&extend=1"
     type: http
+    url: "https://gbshct.spphhnhg.top/link2/Ll44WyRvBWgruvyuCFagHvwgAt7o9EdT"
     interval: 86400
+    path: ./providers/airport1.yaml
+    proxy: 直连
     health-check:
       enable: true
       url: https://www.gstatic.com/generate_204
-      interval: 300
-    proxy: 直连
+      interval: 600
   Airport2:
-    url: "https://app.token=srvbhwnv"
     type: http
+    url: "https://app.mitce.net/?sid=407835&token=srvbhwnv7835&token=srvbhwnv"
     interval: 86400
+    path: ./providers/airport2.yaml
+    proxy: 直连
     health-check:
       enable: true
       url: https://www.gstatic.com/generate_204
-      interval: 300
-    proxy: 直连
+      interval: 600
 
 # 节点信息
 proxies:
@@ -57,9 +59,12 @@ tun:
   enable: true
   device: nikki
   stack: mixed
-  auto-route: false
-  auto-redirect: false
-  auto-detect-interface: false
+  auto-route: true
+  auto-redirect: true
+  auto-detect-interface: true
+  dns-hijack:
+    - tcp://any:53
+    - udp://any:53
 
 # DNS模块
 dns:
@@ -74,16 +79,16 @@ dns:
     - 223.5.5.5
     - 119.29.29.29
   proxy-server-nameserver:
-    - 223.5.5.5
-    - 119.29.29.29
-  nameserver:
-    - 202.106.195.68
+    - 45.90.28.0
+    - 8.8.8.8
+  direct-nameserver:
+    - 202.106.196.115
     - 202.106.46.151
-    - 119.29.29.29
-    # - https://dns.alidns.com/dns-query
-    # - https://223.5.5.5/dns-query
-    # - https://1.1.1.1/dns-query
-    # - https://8.8.8.8/dns-query
+    - 223.5.5.5
+  # nameserver:
+  #   - 202.106.195.68
+  #   - 202.106.46.151
+  #   - 119.29.29.29
   fake-ip-filter:
     - "rule-set:fakeipfilter_domain"
     - +.lan
@@ -96,18 +101,18 @@ dns:
 proxy-groups:
   - {name: 🚀 默认代理, type: select, proxies: [♻️ 自动选择, ♻️ 香港自动, ♻️ 日本自动, ♻️ 狮城自动, ♻️ 美国自动, ♻️ 韩国自动, 🇭🇰 香港节点, 🇯🇵 日本节点, 🇸🇬 狮城节点, 🇺🇲 美国节点, ♻️ 专线自动, 🌐 全部节点, 直连]}
   - {name: ♻️ 自动选择, type: url-test, include-all: true, tolerance: 20, interval: 180, filter: "^((?!(直连)).)*$"}
+  - {name: 🌐 全部节点, type: select, include-all: true}
   - {name: ♻️ 香港自动, type: url-test, include-all: true, tolerance: 20, interval: 180, filter: "(?=.*(港|HK|(?i)Hong))^((?!(台|日|韩|新|深|美)).)*$"}
   - {name: ♻️ 日本自动, type: url-test, include-all: true, tolerance: 20, interval: 180, filter: "(?=.*(日|JP|(?i)Japan))^((?!(港|台|韩|新|美)).)*$"}
   - {name: ♻️ 狮城自动, type: url-test, include-all: true, tolerance: 20, interval: 180, filter: "(?=.*(新加坡|坡|狮城|SG|Singapore))^((?!(港|台|韩|日|美)).)*$"}
   - {name: ♻️ 美国自动, type: url-test, include-all: true, tolerance: 20, interval: 180, filter: "(?=.*(美|US|(?i)States|America))^((?!(港|台|日|韩|新)).)*$"}
   - {name: ♻️ 韩国自动, type: url-test, include-all: true, tolerance: 20, interval: 180, filter: "(?=.*(韩|KR|(?i)Korea))^((?!(港|台|日|美|新)).)*$"}
   - {name: ♻️ 专线自动, type: url-test, include-all: true, tolerance: 20, interval: 180, filter: ".*IPLC.*"}
-  - {name: 🎬 猫熊Emby, type: select, include-all: true, filter: ".*福利.*"}
+  - {name: 🎬 猫熊Emby, type: select, include-all: true}
   - {name: 🇭🇰 香港节点, type: select, include-all: true, filter: "(?=.*(港|HK|(?i)Hong))^((?!(台|日|韩|新|深|美)).)*$"}
   - {name: 🇯🇵 日本节点, type: select, include-all: true, filter: "(?=.*(日|JP|(?i)Japan))^((?!(港|台|韩|新|美)).)*$"}
   - {name: 🇸🇬 狮城节点, type: select, include-all: true, filter: "(?=.*(新加坡|坡|狮城|SG|Singapore))^((?!(台|日|韩|深|美)).)*$"}
   - {name: 🇺🇲 美国节点, type: select, include-all: true, filter: "(?=.*(美|US|(?i)States|America))^((?!(港|台|韩|新|日)).)*$"}
-  - {name: 🌐 全部节点, type: select, include-all: true}
   
   - {name: 📹 YouTube, type: select, proxies: [♻️ 美国自动, ♻️ 香港自动, ♻️ 日本自动, ♻️ 狮城自动, ♻️ 自动选择, ♻️ 韩国自动, 🇭🇰 香港节点, 🇯🇵 日本节点, 🇸🇬 狮城节点, 🇺🇲 美国节点, ♻️ 专线自动, 🌐 全部节点, 直连]}
   - {name: 🍀 Google, type: select, proxies: [♻️ 自动选择, ♻️ 香港自动, ♻️ 日本自动, ♻️ 狮城自动, ♻️ 美国自动, ♻️ 韩国自动, 🇭🇰 香港节点, 🇯🇵 日本节点, 🇸🇬 狮城节点, 🇺🇲 美国节点, ♻️ 专线自动, 🌐 全部节点, 直连]}
