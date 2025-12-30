@@ -4,21 +4,21 @@
 # 跑裸核用户请自行去掉下方控制面板模块的注释。
 # 机场订阅
 proxy-providers:
-  Airport1:
+  Maoxiong:
     type: http
     url: "https://gbshct.spphhnhg.top/link2/Ll44WyRvBWgruvyuCFagHvwgAt7o9EdT"
     interval: 86400
-    path: ./providers/airport1.yaml
+    path: ./providers/Maoxiong.yaml
     proxy: 直连
     health-check:
       enable: true
       url: https://www.gstatic.com/generate_204
       interval: 600
-  Airport2:
+  Mitce:
     type: http
     url: "https://app.mitce.net/?sid=407835&token=srvbhwnv7835&token=srvbhwnv"
     interval: 86400
-    path: ./providers/airport2.yaml
+    path: ./providers/Mitce.yaml
     proxy: 直连
     health-check:
       enable: true
@@ -109,7 +109,7 @@ proxy-groups:
   - {name: ♻️ 美国自动, type: url-test, include-all: true, tolerance: 20, interval: 180, filter: "(?=.*(美|US|(?i)States|America))^((?!(港|台|日|韩|新)).)*$"}
   - {name: ♻️ 韩国自动, type: url-test, include-all: true, tolerance: 20, interval: 180, filter: "(?=.*(韩|KR|(?i)Korea))^((?!(港|台|日|美|新)).)*$"}
   - {name: ♻️ 专线自动, type: url-test, include-all: true, tolerance: 20, interval: 180, filter: ".*IPLC.*"}
-  - {name: 🎬 猫熊Emby, type: select, use: [Airport1] }
+  - {name: 🎬 猫熊Emby, type: select, use: [Maoxiong] }
   - {name: 🇭🇰 香港节点, type: select, include-all: true, filter: "(?=.*(港|HK|(?i)Hong))^((?!(台|日|韩|新|深|美)).)*$"}
   - {name: 🇯🇵 日本节点, type: select, include-all: true, filter: "(?=.*(日|JP|(?i)Japan))^((?!(港|台|韩|新|美)).)*$"}
   - {name: 🇸🇬 狮城节点, type: select, include-all: true, filter: "(?=.*(新加坡|坡|狮城|SG|Singapore))^((?!(台|日|韩|深|美)).)*$"}
